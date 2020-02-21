@@ -8,9 +8,13 @@ import { TypoComponent } from './pages/typo/typo.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { TableComponent } from './pages/table/table.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FooterComponent } from './layout/footer/footer.component';
+import { NavbarComponent } from './layout/navbar/navbar.component';
+import { SidebarComponent } from './layout/sidebar/sidebar.component';
+import { TopbarComponent } from './layout/topbar/topbar.component';
 
 @NgModule({
-  declarations: [AppComponent, FormComponent, TypoComponent, DashboardComponent, TableComponent],
+  declarations: [AppComponent, FormComponent, TypoComponent, DashboardComponent, TableComponent, FooterComponent, NavbarComponent, SidebarComponent, TopbarComponent],
   imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent],
