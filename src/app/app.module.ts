@@ -6,19 +6,13 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './pages/form/form.component';
 import { TypoComponent } from './pages/typo/typo.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { TableComponent } from './pages/table/table.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FormComponent,
-    TypoComponent,
-    DashboardComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, FormComponent, TypoComponent, DashboardComponent, TableComponent],
+  imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
