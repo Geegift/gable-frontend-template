@@ -12,10 +12,18 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { TopbarComponent } from './layout/topbar/topbar.component';
+import { Routes, RouterModule } from '@angular/router';
 
+const appRoutes: Routes = [
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'form', component: FormComponent },
+  { path: 'table', component: TableComponent },
+  { path: 'typo', component: TypoComponent },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+];
 @NgModule({
   declarations: [AppComponent, FormComponent, TypoComponent, DashboardComponent, TableComponent, FooterComponent, NavbarComponent, SidebarComponent, TopbarComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, RouterModule.forRoot(appRoutes)],
   providers: [],
   bootstrap: [AppComponent],
 })
