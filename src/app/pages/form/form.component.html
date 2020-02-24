@@ -26,7 +26,7 @@
             <div class="form-group row">
               <label class="col-4 col-form-label">Password</label>
               <div class="col-8">
-                <input id="input-password" name="password" type="password" name="password" class="form-control" />
+                <input id="input-password" name="password" type="password" class="form-control" />
               </div>
             </div>
             <div class="form-group row">
@@ -76,22 +76,71 @@
           </div>
           <div class="card-body">
             <div class="form-group row">
+              <label class="col-4 col-form-label">Square Input</label>
+              <div class="col-8">
+                <input id="input-squarebox" name="squarebox" type="text" class="form-control form-square" />
+              </div>
+            </div>
+            <div class="form-group row">
               <label class="col-4 col-form-label">Rounded Input</label>
               <div class="col-8">
                 <input id="input-circlebox" name="circlebox" type="text" class="form-control form-circle" />
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-4 col-form-label">Square Input</label>
+              <label class="col-4 col-form-label">Rounded Left Input</label>
               <div class="col-8">
-                <input id="input-squarebox" name="squarebox" type="text" class="form-control form-square" />
+                <input id="input-circlebox-l" name="circleBL" type="text" class="form-control form-circle-l" />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-4 col-form-label">Rounded Right Input</label>
+              <div class="col-8">
+                <input id="input-circlebox-r" name="circleBR" type="text" class="form-control form-circle-r" />
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-4 col-form-label">Input Size</label>
+              <div class="col-8">
+                <input id="input-smBox" name="smBox" type="text" class="form-control form-control-sm mg-b-20" placeholder="sm box" />
+                <input id="input-defaultBox" name="defaultBox" type="text" class="form-control" placeholder="default box" />
+                <input id="input-lgBox" name="lgBox" type="text" class="form-control form-control-lg" placeholder="lg box" />
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="col-6">
-        <div class="card">3</div>
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title">Input group</h5>
+          </div>
+          <div class="card-body">
+            <div class="form-group row">
+              <label class="col-4 col-form-label">Input with prefix</label>
+              <div class="col-8">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">@</span>
+                  </div>
+                  <input id="input-username" name="username1" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-4 col-form-label">Input with suffix</label>
+              <div class="col-8">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Input" aria-label="name" aria-describedby="basic-addon2" />
+                  <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">@example.com</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="col-6">
         <div class="card">4</div>
