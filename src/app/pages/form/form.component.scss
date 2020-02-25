@@ -1,6 +1,12 @@
+.form-square {
+  border-radius: 0rem;
+}
 .form-circle {
   border-radius: 1.5rem;
 }
-.form-square {
-  border-radius: 0rem;
+.form-circle-l {
+  border-radius: 1.5rem 0 0 1.5rem;
+}
+.form-circle-r {
+  border-radius: 0 1.5rem 1.5rem 0;
 }
