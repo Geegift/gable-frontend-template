@@ -1,20 +1,45 @@
 import { Injectable } from '@angular/core';
-import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDateStruct, NgbDate } from '@ng-bootstrap/ng-bootstrap';
+import * as moment from 'moment';
+export interface CompareDate {
+  from: string;
+  to: string;
+  compareFrom: string;
+  compareTo: string;
+}
 
 @Injectable({
   providedIn: 'root',
 })
 export class DateTimeService {
-  today: Date = new Date();
+  private today: Date = new Date();
 
-  public getToday = (): Date => {
-    return this.today;
+  // Transform Date to UTC-ISO string
+  private transformIsoStartDate = (date): string => new Date(new Date(date).setHours(0, 0, 0, 0)).toISOString();
+  private transformIsoEndDate = (date): string => new Date(new Date(date).setHours(0, 0, 0, -1)).toISOString();
+
+  // Transform Date Back
+  public transformFromIso = (date): Date => new Date(date);
+
+  // Transform Date Format
+  public transformDateDDMMYYYY = (date): string => moment(date).format('DD/MM/YYYY');
+  public transformDateDDMMYYYY_HHMM = (date): string => moment(date).format('DD/MM/YYYY HH:mm');
+
+  // Today - Original
+  public getToday = (): Date => this.today;
+  // Today - NgbDate
+  public getTodayNgb = (): NgbDateStruct => new NgbDate(this.today.getFullYear(), this.today.getMonth(), this.today.getDate());
+  // Today - Range
+  public getTodayRange = (): CompareDate => {
+    return {
+      from: this.transformIsoStartDate(new Date().setDate(new Date().getDate())),
+      to: this.transformIsoEndDate(new Date().setDate(new Date().getDate() + 1)),
+      compareFrom: this.transformIsoStartDate(new Date().setDate(new Date().getDate() - 1)),
+      compareTo: this.transformIsoEndDate(new Date().setDate(new Date().getDate())),
+    };
   };
 
-  public getTodayNgb = (): NgbDateStruct => {
-    return { year: this.today.getFullYear(), month: this.today.getMonth(), day: this.today.getDate() };
-  };
+  // Yerterday
 
-  
   constructor() {}
 }
