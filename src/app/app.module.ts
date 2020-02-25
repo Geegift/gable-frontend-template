@@ -13,6 +13,7 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { TopbarComponent } from './layout/topbar/topbar.component';
 import { Routes, RouterModule } from '@angular/router';
+import { NgxPopper } from 'angular-popper';
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -23,7 +24,7 @@ const appRoutes: Routes = [
 ];
 @NgModule({
   declarations: [AppComponent, FormComponent, TypoComponent, DashboardComponent, TableComponent, FooterComponent, NavbarComponent, SidebarComponent, TopbarComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, RouterModule.forRoot(appRoutes)],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, RouterModule.forRoot(appRoutes), NgxPopper],
   providers: [],
   bootstrap: [AppComponent],
 })
