@@ -103,9 +103,27 @@
             <div class="form-group row">
               <label class="col-4 col-form-label">Input Size</label>
               <div class="col-8">
-                <input id="input-smBox" name="smBox" type="text" class="form-control form-control-sm mg-b-20" placeholder="sm box" />
-                <input id="input-defaultBox" name="defaultBox" type="text" class="form-control" placeholder="default box" />
-                <input id="input-lgBox" name="lgBox" type="text" class="form-control form-control-lg" placeholder="lg box" />
+                <input id="input-smBox1" name="smBox1" type="text" class="form-control form-control-sm" placeholder="sm box" />
+                <input id="input-defaultBox1" name="defaultBox1" type="text" class="form-control mt-3" placeholder="default box" />
+                <input id="input-lgBox1" name="lgBox1" type="text" class="form-control form-control-lg mt-3" placeholder="lg box" />
+                <div class="input-group input-group-sm mt-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
+                  </div>
+                  <input id="input-smBox2" name="smBox2" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="sm box with addon" />
+                </div>
+                <div class="input-group mt-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Default</span>
+                  </div>
+                  <input id="input-defaultBox2" name="defaultBox2" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="default box with addon" />
+                </div>
+                <div class="input-group input-group-lg mt-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-lg">Large</span>
+                  </div>
+                  <input id="input-lgBox2" name="lgBox2" type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-lg" placeholder="lg box with addon" />
+                </div>
               </div>
             </div>
           </div>
@@ -118,26 +136,217 @@
           </div>
           <div class="card-body">
             <div class="form-group row">
-              <label class="col-4 col-form-label">Input with prefix</label>
+              <label class="col-4 col-form-label">Addon with Input text</label>
               <div class="col-8">
                 <div class="input-group">
                   <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">@</span>
+                    <span class="input-group-text" id="basic-addon1">@text</span>
                   </div>
-                  <input id="input-username" name="username1" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
+                  <input id="input-addon1" name="addon1" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" />
+                </div>
+                <div class="input-group mt-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon2">@text area</span>
+                  </div>
+                  <textarea id="input-addon2" name="addon2" class="form-control" aria-label="With textarea"></textarea>
+                </div>
+                <div class="input-group mt-3">
+                  <input id="input-addon3" name="addon3" type="text" class="form-control" placeholder="" aria-label="name" aria-describedby="basic-addon3" />
+                  <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon3">@example.com</span>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-4 col-form-label">Input with suffix</label>
+              <label class="col-4 col-form-label">Addon on both side</label>
               <div class="col-8">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Input" aria-label="name" aria-describedby="basic-addon2" />
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                  </div>
+                  <input id="input-addon4" name="addon4" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" />
                   <div class="input-group-append">
-                    <span class="input-group-text" id="basic-addon2">@example.com</span>
+                    <span class="input-group-text">.00</span>
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-4 col-form-label">Multiple Addon</label>
+              <div class="col-8">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                    <span class="input-group-text">0.00</span>
+                  </div>
+                  <input id="input-addon5" name="addon5" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" />
+                </div>
+                <div class="input-group mt-3">
+                  <input id="input-addon6" name="addon6" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" />
+                  <div class="input-group-append">
+                    <span class="input-group-text">$</span>
+                    <span class="input-group-text">0.00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-4">Checkboxes and radios with input text</label>
+              <div class="col-8">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <input type="checkbox" aria-label="Checkbox for following text input" />
+                    </div>
+                  </div>
+                  <input type="text" class="form-control" aria-label="Text input with checkbox" />
+                </div>
+
+                <div class="input-group mt-3">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <input type="radio" aria-label="Radio button for following text input" />
+                    </div>
+                  </div>
+                  <input type="text" class="form-control" aria-label="Text input with radio button" />
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-4 col-form-label">Multiple Inputs</label>
+              <div class="col-8">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">First and last name</span>
+                  </div>
+                  <input id="input-firstname" name="firstname" type="text" class="form-control" />
+                  <input id="input-lastname" name="lastname" type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-4 col-form-label">Button addons</label>
+              <div class="col-8">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary" type="button">Button</button>
+                  </div>
+                  <input id="button-addon1" name="bntaddon1" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" />
+                </div>
+
+                <div class="input-group mt-3">
+                  <input id="button-addon2" name="bntaddon2" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon2" />
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button">Button</button>
+                  </div>
+                </div>
+
+                <div class="input-group mt-3">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary" type="button">Button</button>
+                    <button class="btn btn-outline-secondary" type="button">Button</button>
+                  </div>
+                  <input id="button-addon3" name="bntaddon3" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" />
+                </div>
+
+                <div class="input-group mt-3">
+                  <input id="button-addon4" name="bntaddon4" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon2" />
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button">Button</button>
+                    <button class="btn btn-outline-secondary" type="button">Button</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-4 col-form-label">Buttons with dropdowns</label>
+              <div class="col-8">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                      <div role="separator" class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                  </div>
+                  <input type="text" class="form-control" aria-label="Text input with dropdown button" />
+                </div>
+
+                <div class="input-group mt-3">
+                  <input type="text" class="form-control" aria-label="Text input with dropdown button" />
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                      <div role="separator" class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <button type="button" class="btn btn-outline-secondary">Action</button>
+                    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                      <div role="separator" class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                  </div>
+                  <input type="text" class="form-control" aria-label="Text input with segmented dropdown button" />
+                </div>
+
+                <div class="input-group">
+                  <input type="text" class="form-control" aria-label="Text input with segmented dropdown button" />
+                  <div class="input-group-append">
+                    <button type="button" class="btn btn-outline-secondary">Action</button>
+                    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                      <div role="separator" class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-4 col-form-label"></label>
+              <div class="col-8">
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown button
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-4 col-form-label"></label>
+              <div class="col-8"></div>
+            </div>
+            <div class="form-group row">
+              <label class="col-4 col-form-label"></label>
+              <div class="col-8"></div>
             </div>
           </div>
         </div>
