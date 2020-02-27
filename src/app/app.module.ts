@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import * as $ from 'jquery';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,7 +25,7 @@ const appRoutes: Routes = [
 ];
 @NgModule({
   declarations: [AppComponent, FormComponent, TypoComponent, DashboardComponent, TableComponent, FooterComponent, NavbarComponent, SidebarComponent, TopbarComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, RouterModule.forRoot(appRoutes), NgxPopper],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, RouterModule.forRoot(appRoutes), NgxPopper, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
