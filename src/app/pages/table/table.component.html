@@ -1,6 +1,8 @@
-<table id="example" class="display" style="width:100%">
+<h1>Sample Table</h1>
+<table class="table table-striped">
     <thead>
         <tr>
+            <th>ID</th>
             <th>Name</th>
             <th>Position</th>
             <th>Office</th>
@@ -10,13 +12,39 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Krishna</td>
-            <td>Programmer</td>
-            <td>G-Able</td>
-            <td>22</td>
-            <td>2020/02/03</td>
-            <td>$10,000</td>
+        <tr *ngFor="let employee of employees">
+            <th scope="row">{{ employee.id }}</th>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.position }}</td>
+            <td>{{ employee.office }}</td>
+            <td>{{ employee.age | number }}</td>
+            <td>{{ employee.startDate }}</td>
+            <td>{{ employee.salary }}</td>
         </tr>
     </tbody>
-</table> 
+    <tfoot>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+        </tr>
+    </tfoot>
+</table>
+
+<div class="d-flex justify-content-between p-2">
+    <ngb-pagination [collectionSize]="collectionSize" 
+                    [(page)]="page" 
+                    [pageSize]="pageSize">
+    </ngb-pagination>
+  
+    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+      <option [ngValue]="2">2 items per page</option>
+      <option [ngValue]="4">4 items per page</option>
+      <option [ngValue]="6">6 items per page</option>
+    </select>
+</div>
+<pre style="text-align: right;">Current page: {{page}}</pre>

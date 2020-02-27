@@ -2,6 +2,14 @@
 // reboot.scss
 //
 
+body {
+  font-family: $font-family-secondary;
+}
+
+input, button, select, optgroup, textarea {
+  font-family: $font-family-secondary;
+}
+
 label {
   font-weight: $font-weight-semibold;
 }
