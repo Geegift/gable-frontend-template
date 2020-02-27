@@ -16,10 +16,7 @@ export class TableComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.dtOptions = {"columnDefs": [{ 
       "pagingType": "full_numbers"
-    }]};
-    $(()=>{  
-      $('table.display').DataTable(this.dtOptions);
-    });   
+    }]};   
     this.dataTable = $(this.table.nativeElement);
     this.dataTable.DataTable(this.dtOptions);
  }
