@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,7 +26,7 @@ const appRoutes: Routes = [
 ];
 @NgModule({
   declarations: [AppComponent, FormComponent, TypoComponent, DashboardComponent, TableComponent, FooterComponent, NavbarComponent, SidebarComponent, TopbarComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, RouterModule.forRoot(appRoutes), NgxPopper, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, RouterModule.forRoot(appRoutes), NgxPopper, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
