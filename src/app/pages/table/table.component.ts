@@ -162,7 +162,9 @@ const EMPLOYEES: Employee[] = [
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
+
 export class TableComponent implements OnInit {
+  //Pagination
   page = 1;
   pageSize = 4;
   collectionSize = EMPLOYEES.length;
@@ -173,7 +175,7 @@ export class TableComponent implements OnInit {
       .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize)
   }
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
 
