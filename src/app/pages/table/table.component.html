@@ -1,51 +1,58 @@
 <h1>Sample Table</h1>
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let employee of employees">
-            <th scope="row">{{ employee.id }}</th>
-            <td>{{ employee.name }}</td>
-            <td>{{ employee.position }}</td>
-            <td>{{ employee.office }}</td>
-            <td>{{ employee.age | number }}</td>
-            <td>{{ employee.startDate }}</td>
-            <td>{{ employee.salary }}</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
-        </tr>
-    </tfoot>
-</table>
+<form>
+    <div class="form-group form-inline">
+        Search: <input class="form-control ml-2" type="text" name="searchTerm" [(ngModel)]="service.searchTerm"/>
+        <span class="ml-3" *ngIf="service.loading$ | async">Loading...</span>
+    </div>
 
-<div class="d-flex justify-content-between p-2">
-    <ngb-pagination [collectionSize]="collectionSize" 
-                    [(page)]="page" 
-                    [pageSize]="pageSize">
-    </ngb-pagination>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col" sortable="id" (sort)="onSort($event)">ID</th>
+                <th scope="col" sortable="name" (sort)="onSort($event)">Name</th>
+                <th scope="col" sortable="position" (sort)="onSort($event)">Position</th>
+                <th scope="col" sortable="office" (sort)="onSort($event)">Office</th>
+                <th scope="col" sortable="age" (sort)="onSort($event)">Age</th>
+                <th scope="col" sortable="startDate" (sort)="onSort($event)">Start date</th>
+                <th scope="col" sortable="salary" (sort)="onSort($event)">Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees$ | async">
+                <th class="text-nowrap" scope="row">{{ employee.id }}</th>
+                <td class="text-nowrap">
+                    <ngb-highlight [result]="employee.name" [term]="service.searchTerm"></ngb-highlight>
+                </td>
+                <td class="text-nowrap">
+                    <ngb-highlight [result]="employee.position" [term]="service.searchTerm"></ngb-highlight>
+                </td>
+                <td class="text-nowrap">
+                    <ngb-highlight [result]="employee.office" [term]="service.searchTerm"></ngb-highlight>
+                </td>
+                <td class="text-nowrap">
+                    <ngb-highlight [result]="employee.age | number" [term]="service.searchTerm"></ngb-highlight>
+                </td>
+                <td class="text-nowrap">
+                    <ngb-highlight [result]="employee.startDate" [term]="service.searchTerm"></ngb-highlight>
+                </td>
+                <td class="text-nowrap">
+                    <ngb-highlight [result]="employee.salary" [term]="service.searchTerm"></ngb-highlight>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="d-flex justify-content-between p-2">
+        <ngb-pagination [collectionSize]="total$ | async"
+                        [(page)]="service.page" 
+                        [pageSize]="service.pageSize">
+        </ngb-pagination>
   
-    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
-      <option [ngValue]="2">2 items per page</option>
-      <option [ngValue]="4">4 items per page</option>
-      <option [ngValue]="6">6 items per page</option>
-    </select>
-</div>
-<pre style="text-align: right;">Current page: {{page}}</pre>
+        <select class="custom-select" style="width: auto" name="pageSize" [(ngModel)]="service.pageSize">
+        <option [ngValue]="2">2 items per page</option>
+        <option [ngValue]="4">4 items per page</option>
+        <option [ngValue]="6">6 items per page</option>
+        </select>
+    </div>
+</form>

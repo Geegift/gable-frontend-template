@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { DecimalPipe } from '@angular/common';
+import { Component, QueryList, ViewChildren } from '@angular/core';
+import { Observable } from 'rxjs';
+import { SortableHeader, SortEvent } from './sortable.directive';
+import { EmployeeService } from './table.service';
 
 interface Employee {
   id?: number;
@@ -157,28 +161,36 @@ const EMPLOYEES: Employee[] = [
   }
 ];
 
+export { Employee, EMPLOYEES };
+
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss']
+  styleUrls: ['./table.component.scss'],
+  providers: [EmployeeService, DecimalPipe]
 })
 
-export class TableComponent implements OnInit {
-  //Pagination
-  page = 1;
-  pageSize = 4;
-  collectionSize = EMPLOYEES.length;
+export class TableComponent {
+  employees$: Observable<Employee[]>;
+  total$: Observable<number>;
 
-  get employees(): Employee[] {
-    return EMPLOYEES
-      .map((employee, i) => ({id: i + 1, ...employee}))
-      .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize)
+  @ViewChildren(SortableHeader) headers: QueryList<SortableHeader>;
+
+  constructor(public service: EmployeeService) {
+    this.employees$ = service.employees$;
+    this.total$ = service.total$;
   }
 
-  constructor() {}
+  onSort({column, direction}: SortEvent) {
+    //reseting other headers
+    this.headers.forEach(header => {
+      if(header.sortable !== column) {
+        header.direction = '';
+      }
+    });
 
-  ngOnInit(): void {
-
- }
+    this.service.sortColumn = column;
+    this.service.sortDirection = direction;
+  }
 
 }
