@@ -19,6 +19,14 @@ const routes: Routes = [
     path: 'typo',
     loadChildren: () => import('./typo/typo.module').then(m => m.TypoModule),
   },
+  {
+    path: 'accordion',
+    loadChildren: () => import('./ui-elements/accordion/accordion.module').then(m => m.AccordionModule),
+  },
+  {
+    path: 'alerts',
+    loadChildren: () => import('./ui-elements/alerts/alerts.module').then(m => m.AlertsModule),
+  },
 ];
 
 @NgModule({

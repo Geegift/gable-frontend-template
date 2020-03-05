@@ -8,6 +8,7 @@ import { TableService } from 'src/app/core/services/table.service';
 })
 
 export class TableComponent implements OnInit {
+  page =1;
 
   constructor(private tableService: TableService) {}
 
@@ -21,5 +22,5 @@ export class TableComponent implements OnInit {
         this.arrEmployees = employee;
       }, e => console.log(e)
     );
- }
+  }
 }

@@ -1,5 +1,13 @@
 <h1>Sample Table</h1>
 
+<div class="d-flex justify-content-end">
+    <select class="custom-select" style="width: auto" >
+        <option [ngValue]="4">4 items per page</option>
+        <option [ngValue]="6">6 items per page</option>
+        <option [ngValue]="10">10 items per page</option>
+    </select>
+</div>
+
 <table *ngIf="arrEmployees" class="table table-striped">
     <thead>
         <tr>
@@ -22,6 +30,9 @@
         </tr>
     </tbody>
 </table>
+
+<ngb-pagination class="d-flex justify-content-end" [collectionSize]="70" [(page)]="page"></ngb-pagination>
+<pre>Current page: {{page}}</pre>
 
 <!-- <div class="d-flex justify-content-between p-2">
     <ngb-pagination [collectionSize]="collectionSize" 
