@@ -5,6 +5,6 @@ import { PagesRoutingModule } from './pages-routing.module';
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, PagesRoutingModule, CommonModule, NgbDropdownModule, PagesRoutingModule],
+  imports: [CommonModule, PagesRoutingModule, NgbDropdownModule],
 })
 export class PagesModule {}

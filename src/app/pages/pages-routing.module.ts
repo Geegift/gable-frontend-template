@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { UiElementsRoutingModule } from './ui-elements/ui-elements-routing.module';
 
 const routes: Routes = [
   { path: '', redirectTo: '/form', pathMatch: 'full' },
@@ -19,18 +20,10 @@ const routes: Routes = [
     path: 'typo',
     loadChildren: () => import('./typo/typo.module').then(m => m.TypoModule),
   },
-  {
-    path: 'accordion',
-    loadChildren: () => import('./ui-elements/accordion/accordion.module').then(m => m.AccordionModule),
-  },
-  {
-    path: 'alerts',
-    loadChildren: () => import('./ui-elements/alerts/alerts.module').then(m => m.AlertsModule),
-  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule, UiElementsRoutingModule],
 })
 export class PagesRoutingModule {}
