@@ -4,10 +4,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbDropdownModule, NgbDatepickerModule, NgbTypeaheadModule, NgbTabsetModule, NgbModalModule, NgbAlertModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormComponent } from './form.component';
 import { FormRoutes } from './form-routing.module';
 
 @NgModule({
-  declarations: [],
+  declarations: [FormComponent],
   imports: [
     CommonModule,
     FormsModule,

@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UiElementsRoutingModule } from './ui-elements/ui-elements-routing.module';
-import { FormRoutes } from './form/form-routing.module';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/form', pathMatch: 'full' },
   {
     path: 'dashboard',
     loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
+  },
+  {
+    path: 'form',
+    loadChildren: () => import('./form/form.module').then(m => m.FormModule),
   },
   {
     path: 'table',
@@ -21,6 +24,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule, UiElementsRoutingModule, FormRoutes],
+  exports: [RouterModule, UiElementsRoutingModule],
 })
 export class PagesRoutingModule {}
