@@ -1,16 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FormComponent } from './form.component';
+import { FormElementsComponent } from './form-elements/form-elements.component';
+import { FormAdvancedComponent } from './form-advanced/form-advanced.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: FormComponent,
-  },
-  {
-    path: 'form',
-    component: FormComponent,
-  },
+  { path: 'form-elements', component: FormElementsComponent },
+  { path: 'form-layouts', component: FormAdvancedComponent },
 ];
 
 @NgModule({
